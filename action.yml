@@ -79,7 +79,7 @@ runs:
 
     - name: Expose connection URI
       run: |
-        CONNECTION_URI="postgresql://${{ inputs.username }}:${{ inputs.password }}@localhost/${{ inputs.database }}"
+        CONNECTION_URI="postgresql://${{ inputs.username }}:${{ inputs.password }}@localhost:${{inputs.port}}/${{ inputs.database }}"
         echo ::set-output name=value::$CONNECTION_URI
       shell: bash
       id: connection-uri
