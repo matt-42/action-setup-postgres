@@ -30,7 +30,7 @@ jobs:
           python3 -m pytest -vv test_action.py
         env:
           CONNECTION_URI: ${{ steps.postgres.outputs.connection-uri }}
-          EXPECTED_CONNECTION_URI: postgresql://postgres:postgres@localhost/postgres
+          EXPECTED_CONNECTION_URI: postgresql://postgres:postgres@localhost:5432/postgres
         shell: bash
 
   parametrized:
