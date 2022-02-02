@@ -27,6 +27,8 @@ outputs:
     value: ${{ steps.connection-uri.outputs.value }}
 runs:
   using: composite
+  env:
+    PGPORT: ${{ inputs.port }}
   steps:
     - name: Prerequisites
       run: |
