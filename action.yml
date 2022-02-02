@@ -27,8 +27,6 @@ outputs:
     value: ${{ steps.connection-uri.outputs.value }}
 runs:
   using: composite
-  env:
-    PGPORT: ${{ inputs.port }}
   steps:
     - name: Prerequisites
       run: |
@@ -67,6 +65,8 @@ runs:
       shell: bash
 
     - name: Setup PostgreSQL user and database
+      env:
+        PGPORT: ${{ inputs.port }}
       run: |
         createuser --createdb ${{ inputs.username }}
 
