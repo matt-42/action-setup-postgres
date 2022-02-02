@@ -17,7 +17,7 @@ inputs:
     description: The database name to setup and grant permissions to created user.
     default: postgres
     required: false
-  database:
+  port:
     description: The server port.
     default: 5432
     required: false
